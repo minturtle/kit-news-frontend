@@ -1,0 +1,57 @@
+.SemiProfile {
+  display: flex;
+  margin-top: 3em;
+  padding-left: 3em;
+}
+.SemiProfile img {
+  width: 25%;
+}
+#nameEmail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#nameEmail h2 {
+  margin: 0;
+  margin-top: 0.7em;
+  padding: 0;
+  line-height: 1;
+}
+#nameEmail p {
+  font-size: 0.7rem;
+  color: #bebebe;
+  margin: 0;
+  margin-left: 2em;
+  padding: 0;
+  line-height: 2;
+}
+.professorState1 {
+  border: 1px solid #bebebe;
+  border-radius: 20px;
+  height: 100%;
+  padding: 0.3em;
+}
+.professorState2 {
+  border: 1px solid #2737ce;
+  border-radius: 20px;
+  height: 100%;
+  padding: 0.3em;
+}
+.professorState3 {
+  border: 1px solid red;
+  border-radius: 20px;
+  height: 100%;
+  padding: 0.3em;
+  cursor: pointer;
+}
+.professorState3:hover {
+  background-color: red;
+  color: #bebebe;
+  cursor: pointer;
+}
+.professorState4 {
+  border: 1px solid black;
+  border-radius: 20px;
+  height: 100%;
+  padding: 0.3em;
+}

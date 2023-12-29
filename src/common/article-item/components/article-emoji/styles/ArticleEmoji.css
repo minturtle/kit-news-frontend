@@ -1,0 +1,15 @@
+.article-emoji-item {
+  display: flex;
+}
+
+.article-emoji-item > div {
+  margin-right: 0.6em;
+}
+
+.article-emoji-item > div > span:first-child {
+  cursor: pointer;
+}
+
+.article-emoji-item span {
+  display: block;
+}

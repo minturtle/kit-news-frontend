@@ -1,0 +1,25 @@
+/* 기사 신뢰 표현 */
+.trust {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5em;
+}
+
+.suspicious {
+  margin-right: 0.8em;
+}
+
+/* 따봉 수 */
+.trust-emoji > span:first-child {
+  margin-right: 0.5em;
+}
+
+/* 따봉 아이콘 */
+.trust-emoji > span:nth-child(2) {
+  cursor: pointer;
+}
+
+.suspicious > span,
+.trustworthy > span {
+  font-size: small;
+}

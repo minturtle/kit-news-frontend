@@ -1,0 +1,49 @@
+.ExpertApplication {
+  width: 45%;
+  border: 1px solid #325f95;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3em;
+  box-shadow: 1px 2px 1px 1px;
+  margin: 0.5em 0.2em;
+}
+#expertImg {
+  width: 40%;
+  cursor: pointer;
+}
+#expertImg img {
+  width: 100%;
+}
+#expertProfile {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#expertProfile h3 {
+  margin: 0.3em;
+}
+#expertProfile p {
+  font-size: 0.5rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+#expertBtnDiv {
+  display: flex;
+}
+.expertBtn {
+  width: 3.2em;
+  font-size: 0.7rem;
+  margin: 1em 0.5em 0.5em;
+  border-radius: 20px;
+  border: none;
+  background-color: #fbe1c2;
+}
+.expertBtn:hover {
+  background-color: #325f95;
+  cursor: pointer;
+  color: #ffffff;
+}

@@ -1,0 +1,32 @@
+#IdSearchModalDiv #nameAndTel,
+#IdSearchModalDiv #inputNumber {
+  display: flex;
+  gap: 2%;
+  margin-bottom: 2%;
+  align-items: flex-end;
+}
+
+#IdSearchModalDiv #nameAndTel div,
+#IdSearchModalDiv #inputNumber div {
+  width: 36%;
+}
+
+#IdSearchModalDiv label {
+  display: block;
+  font-size: 2vh;
+  color: black;
+  font-weight: 700;
+}
+
+#IdSearchModalDiv input {
+  background-color: #e8e8e8;
+  border: none;
+  width: 100%;
+}
+
+#IdSearchModalDiv button {
+  font-size: 2vh;
+  background-color: white;
+  border: 1px solid black;
+  font-weight: 700;
+}

@@ -1,0 +1,69 @@
+.comment-item {
+  border-top: 1px solid rgb(215, 215, 215);
+  padding: 0.8em 0.5em;
+}
+
+.comment-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-top > div {
+  display: flex;
+  align-items: center;
+}
+
+/* 댓글 작성자 프로필 이미지 */
+.profile-commentuser {
+  width: 30px;
+  border-radius: 100%;
+  overflow: hidden;
+  margin-right: 0.5em;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 댓글 작성자 */
+.comment-user > span {
+  font-weight: bold;
+}
+
+/* 댓글 삭제 버튼 */
+.comment-btn span {
+  font-size: small;
+  color: rgb(121, 121, 121);
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+
+/* 댓글 내용 */
+.comment-item > span {
+  display: flex;
+  margin: 0.5em 0 0 0.4em;
+}
+
+.comment-thumbs {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.comment-thumbs span {
+  font-size: small;
+  margin-right: 0.4em;
+}
+
+/* 따봉 마우스 hover 효과 */
+.comment-thumbs span:nth-child(even) {
+  cursor: pointer;
+}
+
+/* 따봉간 마진 */
+.comment-thumbs span:nth-child(2) {
+  margin-right: 0.5em;
+}

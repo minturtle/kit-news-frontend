@@ -1,0 +1,56 @@
+.DetailProfile {
+  margin: 2em auto;
+  width: 95%;
+  box-shadow: 1px 2px 1px 1px;
+  border-radius: 20px;
+}
+#detailTitle {
+  background-image: linear-gradient(90deg, #325f95 20%, #9db1c8 80%);
+  color: #ffffff;
+  font-size: 1.2rem;
+  border-radius: 20px 20px 0 0;
+  padding: 0.8em;
+  text-align: left;
+  padding-left: 2em;
+}
+.detailInfor {
+  font-size: 1.2rem;
+  color: #bebebe;
+  padding: 0.8em;
+  text-align: left;
+  padding-left: 2em;
+  display: flex;
+}
+.detailCenter {
+  border-top: 1px solid #bebebe;
+  border-bottom: 1px solid #bebebe;
+}
+.detailLabel {
+  flex: 3;
+}
+.detailData {
+  color: #363636;
+  flex: 7;
+}
+.detailInfor button {
+  float: inline-end;
+  background-color: #eaeaea;
+  border: none;
+  border-radius: 5px;
+  color: #717171;
+}
+.detailInfor button:hover {
+  background-color: #325f95;
+  cursor: pointer;
+  color: #ffffff;
+}
+.hiddenBtn {
+  visibility: hidden;
+}
+.detailCenter input {
+  margin-right: 2em;
+}
+#nickName {
+  height: 100%;
+  width: 49%;
+}

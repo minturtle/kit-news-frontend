@@ -1,0 +1,18 @@
+#kakaoBtn {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  margin: 2em;
+}
+
+#emoji {
+  font-size: 4rem;
+}
+
+.KakaoLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4em;
+  border: 1px solid balck;
+}

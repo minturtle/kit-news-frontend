@@ -1,0 +1,97 @@
+.menu-container {
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #eeeeeebd;
+}
+
+.menu-close {
+  text-align: left;
+  padding: 1em;
+}
+
+.menu-close > span {
+  cursor: pointer;
+}
+
+@keyframes menu-slide-fade-in {
+  0% {
+    right: -300px;
+  }
+
+  100% {
+    right: 0px;
+  }
+}
+
+@keyframes menu-slide-fade-out {
+  0% {
+    right: 0px;
+  }
+
+  100% {
+    right: -300px;
+  }
+}
+
+.menu-bar-fade-in,
+.menu-bar-fade-out {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffffff;
+  width: 300px;
+  right: 0%;
+}
+
+.menu-bar-fade-in {
+  animation: menu-slide-fade-in 0.35s ease;
+}
+
+.menu-bar-fade-out {
+  animation: menu-slide-fade-out 0.35s ease;
+}
+
+.profile {
+  border-bottom: 1px solid rgb(182, 182, 182);
+  display: flex;
+  align-items: center;
+  padding: 0 0.5em 1em 0.5em;
+}
+
+.profile-info {
+  margin-left: 1em;
+}
+
+.profile-info > span:last-child {
+  color: #bebebe;
+  font-size: 0.8rem;
+  display: block;
+  margin-top: 1em;
+}
+
+.category {
+  padding: 1.5em 1em;
+}
+
+.category span {
+  display: block;
+  text-align: left;
+  margin-bottom: 1.5em;
+  cursor: pointer;
+}
+
+.logout {
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+.logout span {
+  cursor: pointer;
+  color: rgb(233, 63, 63);
+}

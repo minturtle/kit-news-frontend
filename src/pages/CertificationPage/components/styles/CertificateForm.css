@@ -1,0 +1,62 @@
+.CertificateForm {
+  margin: 2em auto;
+  width: 95%;
+  box-shadow: 1px 2px 1px 1px;
+  border-radius: 20px;
+}
+#formTitle {
+  background-image: linear-gradient(90deg, #325f95 20%, #9db1c8 80%);
+  color: #ffffff;
+  font-size: 1.2rem;
+  border-radius: 20px 20px 0 0;
+  padding: 0.8em;
+  text-align: left;
+  padding-left: 2em;
+}
+.formInfor {
+  font-size: 1.2rem;
+  color: #bebebe;
+  padding: 0.8em;
+  text-align: left;
+  padding-left: 2em;
+  display: flex;
+}
+.formUnberLine {
+  border-bottom: 1px solid #bebebe;
+}
+.formLabel {
+  flex: 3;
+}
+.formMsg {
+  color: #363636;
+  flex: 7;
+}
+.formData {
+  width: 68%;
+}
+#imgFileDiv {
+  width: 50%%;
+  margin: 1em 0;
+}
+.imgMapDiv {
+  overflow-x: auto;
+}
+.imgFile {
+  width: 100%;
+  margin: 1em;
+}
+#certificateSubmit {
+  border-radius: 20px;
+  padding: 0.8em;
+  font-size: 1.1rem;
+  width: 40%;
+  margin-bottom: 1.5em;
+  border: none;
+  background-color: #325f95;
+  color: #ffffff;
+}
+#certificateSubmit:hover {
+  background-color: #9db1c8;
+  color: #000000;
+  cursor: pointer;
+}
