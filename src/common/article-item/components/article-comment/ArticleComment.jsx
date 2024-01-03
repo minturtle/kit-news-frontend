@@ -9,8 +9,8 @@ import "./styles/ArticleComment.css";
 import ConfirmModal from "../../../confirmModal/ConfirmModal";
 import axios from "axios";
 
-const localhost = "http://localhost:8080";
 
+const BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;
 const ArticleComment = ({ newsId, item, setComment, user }) => {
   const [thumbs, setThumbs] = useState({
     thumbsType: item.userEmotionInfo.userClickEmotionType,
@@ -40,7 +40,7 @@ const ArticleComment = ({ newsId, item, setComment, user }) => {
       });
       axios
         .delete(
-          `${localhost}/api/news/emotion/comment/${item.commentId}`,
+          `${BACKEND_SERVER}/api/news/emotion/comment/${item.commentId}`,
           headers
         )
         .then((res) => console.log(res))
@@ -58,7 +58,7 @@ const ArticleComment = ({ newsId, item, setComment, user }) => {
         });
         axios
           .post(
-            `${localhost}/api/news/emotion/comment/${item.commentId}/LIKE`,
+            `${BACKEND_SERVER}/api/news/emotion/comment/${item.commentId}/LIKE`,
             null,
             headers
           )
@@ -86,7 +86,7 @@ const ArticleComment = ({ newsId, item, setComment, user }) => {
       });
       axios
         .delete(
-          `${localhost}/api/news/emotion/comment/${item.commentId}`,
+          `${BACKEND_SERVER}/api/news/emotion/comment/${item.commentId}`,
           headers
         )
         .then((res) => {
@@ -106,7 +106,7 @@ const ArticleComment = ({ newsId, item, setComment, user }) => {
         });
         axios
           .post(
-            `${localhost}/api/news/emotion/comment/${item.commentId}/DISLIKE`,
+            `${BACKEND_SERVER}/api/news/emotion/comment/${item.commentId}/DISLIKE`,
             null,
             headers
           )
@@ -130,13 +130,13 @@ const ArticleComment = ({ newsId, item, setComment, user }) => {
 
     axios
       .post(
-        `${localhost}/api/news/${newsId}/comment/${item.commentId}`,
+        `${BACKEND_SERVER}/api/news/${newsId}/comment/${item.commentId}`,
         formData,
         headers
       )
       .then(() => {
         axios
-          .get(`${localhost}/api/news/${newsId}/comment`, headers)
+          .get(`${BACKEND_SERVER}/api/news/${newsId}/comment`, headers)
           .then((res) => {
             setComment(res.data.data);
             setUpdate(false);
@@ -158,12 +158,12 @@ const ArticleComment = ({ newsId, item, setComment, user }) => {
 
     axios
       .delete(
-        `${localhost}/api/news/${newsId}/comment/${item.commentId}`,
+        `${BACKEND_SERVER}/api/news/${newsId}/comment/${item.commentId}`,
         headers
       )
       .then(() =>
         axios
-          .get(`${localhost}/api/news/${newsId}/comment`, headers)
+          .get(`${BACKEND_SERVER}/api/news/${newsId}/comment`, headers)
           .then((res) => {
             setComment(res.data.data);
           })

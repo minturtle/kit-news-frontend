@@ -1,8 +1,9 @@
 import React from "react";
 import "../components/styles/KakaoLogin.css";
 
+const BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;
 const KakaoLogin = () => {
-  const KakaoAuothUrl = "http://localhost:8080/api/login/kakao";
+  const KakaoAuothUrl = `${BACKEND_SERVER}/api/login/kakao`;
 
   const handleLogin = () => {
     window.location.href = KakaoAuothUrl;

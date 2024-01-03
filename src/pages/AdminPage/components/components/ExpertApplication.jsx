@@ -3,6 +3,7 @@ import "./styles/ExpertApplication.css";
 import ProfessorCertification from './ProfessorCertification';
 import axios from 'axios';
 
+const BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;
 //props로 데이터 받아서 map으로 뿌릴 예정
 const ExpertApplication = ({ userName, job, company, education, uid }) => {
     axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem("accessToken")}`;
@@ -13,7 +14,7 @@ const ExpertApplication = ({ userName, job, company, education, uid }) => {
 
     const confirmExpert = () => {
         alert("전문가 승인");
-        axios.post(`http://localhost:8080/api/admin/requested/${uid}/approve`, null, headers)
+        axios.post(`${BACKEND_SERVER}/api/admin/requested/${uid}/approve`, null, headers)
             .then((res) => {
                 console.log(res.data);
                 window.location.reload();
@@ -24,7 +25,7 @@ const ExpertApplication = ({ userName, job, company, education, uid }) => {
     };
     const cancelExpert = () => {
         alert("전문가 거부");
-        axios.post(`http://localhost:8080/api/admin/requested/${uid}/reject`, null, headers)
+        axios.post(`${BACKEND_SERVER}/api/admin/requested/${uid}/reject`, null, headers)
             .then((res) => {
                 console.log(res.data);
                 window.location.reload();

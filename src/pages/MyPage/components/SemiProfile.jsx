@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./styles/SemiProfile.css";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+const BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;
 
 const SemiProfile = () => {
     const navigate = useNavigate();
@@ -9,7 +10,7 @@ const SemiProfile = () => {
     axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem("accessToken")}`;
 
     const goCertification = () => {
-        axios.delete(`http://localhost:8080/api/register/expert`, null)
+        axios.delete(`${BACKEND_SERVER}/api/register/expert`, null)
             .then((res) => {
                 console.log(res.data);
             })
@@ -19,7 +20,7 @@ const SemiProfile = () => {
         navigate("/certificate");
     };
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/user-info`)
+        axios.get(`${BACKEND_SERVER}/api/user-info`)
             .then((res) => {
                 console.log(res.data);
                 setData(res.data);

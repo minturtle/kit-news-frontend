@@ -8,7 +8,8 @@ import ArticleTrust from "./components/article-trust/ArticleTrust";
 import ConfirmModal from "../confirmModal/ConfirmModal";
 import LoadingSpinner from "../loadingSpinner/LoadingSpinner";
 
-const localhost = "http://localhost:8080";
+
+const BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;
 
 const ArticleItem = ({ content, deleteView, scrapView }) => {
   console.log(deleteView, scrapView);
@@ -77,16 +78,16 @@ const ArticleItem = ({ content, deleteView, scrapView }) => {
     ] = `Bearer ${localStorage.getItem("accessToken")}`;
 
     axios
-      .get(`${localhost}/api/news/${content.newsId}/emotions`, headers)
+      .get(`${BACKEND_SERVER}/api/news/${content.newsId}/emotions`, headers)
       .then((res) => {
         setEmotion(res.data.data);
         axios
-          .get(`${localhost}/api/news/${content.newsId}/comment`, headers)
+          .get(`${BACKEND_SERVER}/api/news/${content.newsId}/comment`, headers)
           .then((res) => {
             console.log(res.data.data);
             setComment(res.data.data);
             axios
-              .get(`${localhost}/api/user-info`, headers)
+              .get(`${BACKEND_SERVER}/api/user-info`, headers)
               .then((res) => {
                 setUser(res.data);
                 setLoading(false);
@@ -118,7 +119,7 @@ const ArticleItem = ({ content, deleteView, scrapView }) => {
     ] = `Bearer ${localStorage.getItem("accessToken")}`;
 
     axios
-      .post(`${localhost}/api/news/clip/${content.newsId}`, null, headers)
+      .post(`${BACKEND_SERVER}/api/news/clip/${content.newsId}`, null, headers)
       .then((res) => {
         console.log(res);
         setModal(true);
@@ -143,14 +144,14 @@ const ArticleItem = ({ content, deleteView, scrapView }) => {
     if (commentWrite !== null) {
       axios
         .post(
-          `${localhost}/api/news/${content.newsId}/comment`,
+          `${BACKEND_SERVER}/api/news/${content.newsId}/comment`,
           formData,
           headers
         )
         .then((res) => {
           console.log(res);
           axios
-            .get(`${localhost}/api/news/${content.newsId}/comment`, headers)
+            .get(`${BACKEND_SERVER}/api/news/${content.newsId}/comment`, headers)
             .then((res) => {
               setCommentWrite("");
               setComment(res.data.data);

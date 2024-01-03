@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./styles/CertificateForm.css";
 import axios from "axios";
 
+const BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;
 const CertificateForm = () => {
   const [showImages, setShowImages] = useState([]);
   axios.defaults.headers.common[
@@ -43,7 +44,7 @@ const CertificateForm = () => {
 
     //axios통신
     axios
-      .post(`http://localhost:8080/api/register/expert`, formData, headers)
+      .post(`${BACKEND_SERVER}/api/register/expert`, formData, headers)
       .then((res) => {
         console.log(res.data);
         alert("전문가 신청 완료");

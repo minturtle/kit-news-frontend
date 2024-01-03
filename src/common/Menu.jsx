@@ -6,7 +6,7 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./Menu.css";
 import axios from "axios";
 
-const localhost = "http://localhost:8080";
+const BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;
 
 const headers = {
   "Content-Type": "application/json",
@@ -37,7 +37,7 @@ const Menu = ({ open, setOpen }) => {
 
   useEffect(() => {
     axios
-      .get(`${localhost}/api/user-info`, headers)
+      .get(`${BACKEND_SERVER}/api/user-info`, headers)
       .then((res) => {
         setUser(res.data);
       })

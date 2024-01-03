@@ -9,7 +9,7 @@ import "./styles/ArticleTrust.css";
 import ConfirmModal from "../../../confirmModal/ConfirmModal";
 import axios from "axios";
 
-const localhost = "http://localhost:8080";
+const BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;
 const headers = {
   "Content-Type": "application/json",
 };
@@ -39,7 +39,7 @@ const ArticleTrust = ({ emotion }) => {
       });
       axios
         .delete(
-          `${localhost}/api/news/emotion/news/${emotion.newsId}/NEWS_TRUST_EMOTION`,
+          `${BACKEND_SERVER}/api/news/emotion/news/${emotion.newsId}/NEWS_TRUST_EMOTION`,
           headers
         )
         .then((res) => console.log(res))
@@ -57,7 +57,7 @@ const ArticleTrust = ({ emotion }) => {
         });
         axios
           .post(
-            `${localhost}/api/news/emotion/news/${emotion.newsId}/NEWS_TRUST_EMOTION/SUSPICIOUS`,
+            `${BACKEND_SERVER}/api/news/emotion/news/${emotion.newsId}/NEWS_TRUST_EMOTION/SUSPICIOUS`,
             null,
             headers
           )
@@ -78,7 +78,7 @@ const ArticleTrust = ({ emotion }) => {
       });
       axios
         .delete(
-          `${localhost}/api/news/emotion/news/${emotion.newsId}/NEWS_TRUST_EMOTION`,
+          `${BACKEND_SERVER}/api/news/emotion/news/${emotion.newsId}/NEWS_TRUST_EMOTION`,
           headers
         )
         .then((res) => console.log(res))
@@ -96,7 +96,7 @@ const ArticleTrust = ({ emotion }) => {
         });
         axios
           .post(
-            `${localhost}/api/news/emotion/news/${emotion.newsId}/NEWS_TRUST_EMOTION/TRUSTWORTHY`,
+            `${BACKEND_SERVER}/api/news/emotion/news/${emotion.newsId}/NEWS_TRUST_EMOTION/TRUSTWORTHY`,
             null,
             headers
           )

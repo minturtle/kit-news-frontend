@@ -3,6 +3,8 @@ import "./styles/ExpertApplicationContainer.css";
 import ExpertApplication from "./components/ExpertApplication";
 import axios from "axios";
 
+const BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;
+
 const ExpertApplicationContainer = () => {
   axios.defaults.headers.common[
     "Authorization"
@@ -16,7 +18,7 @@ const ExpertApplicationContainer = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/admin/requested`,
+          `${BACKEND_SERVER}/api/admin/requested`,
           { headers: headers }
         );
         console.log(response.data);

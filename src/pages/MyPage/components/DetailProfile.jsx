@@ -2,14 +2,17 @@ import React, { useState, useEffect } from 'react';
 import "./styles/DetailProfile.css";
 import axios from 'axios';
 
+
+const BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;
+
+
 const DetailProfile = () => {
     axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem("accessToken")}`;
     const [fixNick, setFixNick] = useState(false);
     const [nickname, setNickname] = useState("");
     const [data, setData] = useState([]);
     const headers = {
-        'Content-Type': 'application/json',
-        'Origin': 'http://localhost:3000/'
+        'Content-Type': 'application/json'
     };
 
     const fixNickName = () => {
@@ -19,7 +22,7 @@ const DetailProfile = () => {
         alert("닉네임 변경 통신");
 
         setFixNick(false);
-        axios.post(`http://localhost:8080/api/nickname?nickname=${nickname}`, null, headers)
+        axios.post(`${BACKEND_SERVER}/api/nickname?nickname=${nickname}`, null, headers)
             .then((res) => {
                 console.log(res.data);
                 window.location.reload()
@@ -32,7 +35,7 @@ const DetailProfile = () => {
     };
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/user-info`)
+        axios.get(`${BACKEND_SERVER}/api/user-info`)
             .then((res) => {
                 console.log(res.data);
                 setData(res.data);

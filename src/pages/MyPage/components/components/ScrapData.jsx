@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./styles/ScrapData.css";
 import ArticleContainer from "../../../../common/article-container/ArticleContainer";
 import axios from "axios";
+const BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;
 
 const text = {
   expert: true, // 전문가 여부
@@ -111,7 +112,7 @@ const ScrapData = () => {
 
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/api/news/clip`, null, headers)
+    axios.get(`${BACKEND_SERVER}/api/news/clip`, null, headers)
       .then((res) => {
         console.log(res.data.data);
         setData(res.data.data);

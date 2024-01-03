@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "./Header.css";
 import Menu from "./Menu";
 import axios from "axios";
+
+const BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;
+
 const Header = ({ setData }) => {
   axios.defaults.headers.common[
     "Authorization"
@@ -25,7 +28,7 @@ const Header = ({ setData }) => {
 
   const clickSearch = () => {
     axios
-      .get(`http://localhost:8080/api/news/search/title/${search.title}`)
+      .get(`http://${BACKEND_SERVER}/api/news/search/title/${search.title}`)
       .then((res) => {
         console.log(res.data);
         setData(res.data.data);

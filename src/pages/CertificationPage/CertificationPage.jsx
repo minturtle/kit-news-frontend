@@ -4,11 +4,12 @@ import "./CertificationPage.css";
 import CertificateForm from './components/CertificateForm';
 import axios from 'axios';
 
+const BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;
 const CertificationPage = () => {
     const [userInfo, setUserInfo] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/user-info`)
+        axios.get(`${BACKEND_SERVER}/api/user-info`)
             .then((res) => {
                 console.log(res.data);
                 setUserInfo(res.data);

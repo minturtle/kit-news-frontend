@@ -4,7 +4,7 @@ import "./styles/ArticleEmoji.css";
 import ConfirmModal from "../../../confirmModal/ConfirmModal";
 import axios from "axios";
 
-const localhost = "http://localhost:8080";
+const BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;
 const headers = {
   "Content-Type": "application/json",
 };
@@ -36,7 +36,7 @@ const ArticleEmoji = ({ emotion }) => {
         });
         axios
           .delete(
-            `${localhost}/api/news/emotion/news/${emotion.newsId}/NEWS_EMOTION`,
+            `${BACKEND_SERVER}/api/news/emotion/news/${emotion.newsId}/NEWS_EMOTION`,
             headers
           )
           .then((res) => console.log(res))
@@ -52,7 +52,7 @@ const ArticleEmoji = ({ emotion }) => {
         });
         axios
           .delete(
-            `${localhost}/api/news/emotion/news/${emotion.newsId}/NEWS_EMOTION`,
+            `${BACKEND_SERVER}/api/news/emotion/news/${emotion.newsId}/NEWS_EMOTION`,
             headers
           )
           .then((res) => console.log(res))
@@ -72,7 +72,7 @@ const ArticleEmoji = ({ emotion }) => {
         });
         axios
           .post(
-            `${localhost}/api/news/emotion/news/${emotion.newsId}/NEWS_EMOTION/LIKE`,
+            `${BACKEND_SERVER}/api/news/emotion/news/${emotion.newsId}/NEWS_EMOTION/LIKE`,
             null,
             headers
           )
@@ -89,7 +89,7 @@ const ArticleEmoji = ({ emotion }) => {
         });
         axios
           .post(
-            `${localhost}/api/news/emotion/news/${emotion.newsId}/NEWS_EMOTION/DISLIKE`,
+            `${BACKEND_SERVER}/api/news/emotion/news/${emotion.newsId}/NEWS_EMOTION/DISLIKE`,
             null,
             headers
           )

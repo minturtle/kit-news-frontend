@@ -5,8 +5,8 @@ import { SyncLoader } from "react-spinners";
 import { useInView } from 'react-intersection-observer';
 
 
-const localhost = "http://localhost:8080";
 
+const BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;
 const headers = {
   "Content-Type": "application/json",
 };
@@ -24,7 +24,7 @@ const ArticleContainer = ({ category, deleteView, scrapView, data }) => {
 
 
     // 추가 데이터 요청
-    axios.get(`${localhost}/api/news/list/${category.valueEng}?from=${from}&size=10`, headers)
+    axios.get(`${BACKEND_SERVER}/api/news/list/${category.valueEng}?from=${from}&size=10`, headers)
       .then((res) => {
         setArticle(article => [...article, ...res.data.data]);
         setFrom(from => from + 10);
@@ -45,7 +45,7 @@ const ArticleContainer = ({ category, deleteView, scrapView, data }) => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`${localhost}/api/news/list/${category.valueEng}`, headers)
+      .get(`${BACKEND_SERVER}/api/news/list/${category.valueEng}`, headers)
       .then((res) => {
         console.log(res.data.data);
         setArticle(res.data.data);

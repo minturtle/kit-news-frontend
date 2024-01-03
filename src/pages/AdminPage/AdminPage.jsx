@@ -5,6 +5,9 @@ import ExpertApplicationContainer from "./components/ExpertApplicationContainer"
 import ArticleContainer from "../../common/article-container/ArticleContainer";
 import axios from "axios";
 
+
+const BACKEND_SERVER = process.env.REACT_APP_BACKEND_SERVER;
+
 const text = {
   expert: true, // 전문가 여부
   articleList: [
@@ -110,7 +113,7 @@ const AdminPage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/api/news/list/ALL`)
+      .get(`${BACKEND_SERVER}/api/news/list/ALL`)
       .then((res) => {
         console.log(res.data.data);
         setData(res.data.data);
